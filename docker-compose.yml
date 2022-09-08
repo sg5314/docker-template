@@ -1,0 +1,15 @@
+version: '3'
+services: 
+    flutter:
+        container_name: flutter
+        build:
+            context: .
+            args:
+              - FLUTTER_VERSION=${FLUTTER_VERSION}
+              - INSTALL_ANDROID=${INSTALL_ANDROID}
+        ports:
+            - "8888:8888"
+        volumes:
+            - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+        working_dir: ${APP_CODE_PATH_CONTAINER}
+        tty: true
