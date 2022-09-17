@@ -1,0 +1,15 @@
+version: '3'
+services:
+  react:
+    container_name: react
+    build:
+      context: .
+    tty: true
+    environment:
+      - NODE_ENV=development
+    volumes:
+    - ./reactapp:/usr/src/app
+    command: sh -c "cd reactapp && PORT=3000 yarn start"
+    ports:
+    - "3000:3000"
+    stdin_open: true
