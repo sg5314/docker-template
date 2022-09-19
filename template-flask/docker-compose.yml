@@ -1,0 +1,13 @@
+version: '3'
+services: 
+    flask: # サービス名
+        container_name: flask
+        build: . # ビルドに使うDockerfileの場所
+        tty: true 
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./backend:/backend
+        environment:
+            FLASK_APP: "app.py"
+            FLASK_ENV: "development"
