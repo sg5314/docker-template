@@ -4,7 +4,8 @@
 
 #### フロントエンド 
 * flutter
-* react
+* React
+* React Native
 
 #### バックエンド 
 * flask
